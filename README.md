@@ -1,10 +1,10 @@
 # Algorithms and Data Structures Practice
 
 ##Data Structures
-### Linked List
+## Linked List
 
 ### What is a Linked List?
-A linked list is a collection of nodes. Each node has two fields, an integer value and a pointer that points the the next node. The last node points to a terminator used to signify the end of the list.
+A linked list is a collection of nodes. Each node has two fields, an integer value and a pointer that points the the next node, which together represents a sequence. The last node points to a terminator used to signify the end of the list.
 ###Advantages:
 * Provides better memory management than arrays.
 * Linked lists are allocated memory at run time, so there is no waste in memory.
@@ -23,3 +23,15 @@ A linked list is a collection of nodes. Each node has two fields, an integer val
 * circular
 * doubly
 * doubly circular
+
+## Stack
+
+### What is a Stack?
+A Stack is a first-in-last-out strategy data structure. What identifies the data structure as a stack in either case is not the implementation but the interface: the user is only allowed to pop or push items onto the array or linked list, with few other helper operations.
+
+###Applications:
+* Solving Recursion - recursive calls are placed onto a stack, and removed from there once they are processed.
+* Evaluating post-fix expressions
+* Runtime memory management
+* Backtracking
+* Efficient algorithms
