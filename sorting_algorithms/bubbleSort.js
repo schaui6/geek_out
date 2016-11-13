@@ -13,8 +13,8 @@ function bubbleSort(arr){
   console.log(arr);
   return arr;
 }
-// time: o(n) - constant
-// space: o(n) - constant
+// time: o(n^2) - quadratic
+// space: o(n^2) - quadratic
 bubbleSort([7,5,2,4,3,9]); //[2, 3, 4, 5, 7, 9]
 // [ 7, 5, 2, 4, 3, 9 ]
 // [ 5, 7, 2, 4, 3, 9 ]
@@ -52,3 +52,11 @@ bubbleSort([1,2,3,4,5,6]); //[1, 2, 3, 4, 5, 6]
 // step-6: and then we move backward inside the outer loop.
 //
 // same thing is going on....
+
+
+// Class:	Sorting algorithm
+// Data structure:	Array
+// Worst-case performance:	O(n^{2})
+// Best-case performance:	O(n)
+// Average performance: O(n^{2})
+// Worst-case space complexity:	O(1) auxiliary
