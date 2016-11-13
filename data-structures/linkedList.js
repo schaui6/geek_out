@@ -1,8 +1,11 @@
- function LinkedList() {
+// Create a linked list Object
+function LinkedList() {
+  // the function context has a null head as default
    this.head = null;
  }
-
+// add a function to the linked list object to check if it is empty
 LinkedList.prototype.isEmpty = function(){
+  //  returns true if the head is null
   return this.head === null;
 };
 
@@ -108,11 +111,30 @@ LinkedList.prototype.print = function(){
 
 var list = new LinkedList();
 list.append(10);
+console.log(list);
 list.append(15);
+console.log(list);
+list.remove(15);
+console.log(list);
 list.append(20);
 list.append(25);
 list.prepend(5);
+console.log(list);
 console.log(list.contains(10));
 console.log(list.size());
 console.log(list.isEmpty());
 list.print();
+
+// { head:{ data: node1 , next: null} }
+
+// append a node - next equals new node
+// { head:{ data: node1 , next: { data: node2, next: null } } }
+
+// prepend a node - next equals head and new head equals new node
+// { head2: { data: node2 , next: head1} }
+
+// remove a node - current.next == curernt.next.next and current equals current.next
+// { head:{ data: node1 , next: { data: node2, next: { data: node3, next: null } } } }
+//              current                 current.next        current.next.next
+// { head:{ data: node1 , next: { data: node3, next: null } } }
+//
