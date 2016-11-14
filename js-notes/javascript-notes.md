@@ -36,4 +36,9 @@
 # Avoid 'with'
 * Avoid using with statements.
 * Use short variable names for repeated access to an object.
-* Explicitly bind local variables to object properties instead of implicitly binding them with a 'with' statement. 
+* Explicitly bind local variables to object properties instead of implicitly binding them with a 'with' statement.
+
+# Get Comfortable with Closures
+* Functions can refer to variables defined in outer scopes.
+* Closures can outlive the function that creates them.
+* Closures internally store references to their outer variables, and can both read and update their stored variables.
