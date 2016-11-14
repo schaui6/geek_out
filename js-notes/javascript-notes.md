@@ -75,4 +75,19 @@ Semicolons are never inferred as separators in the head of a 'for' loop or as em
 * Closures internally store references to their outer variables, and can both read and update their stored variables.
 
 # Understand Variable Hoisting
-* 42
+* Variable declarations within a block are implicitly hoisted to the top of their enclosing function.
+* Redeclarations of a variable are treated as a single variable.
+* Consider manually hoisting local variable declarations to avoid confusion.
+
+# Use Immediately Invoked Function Expressions to Create Local Scopes
+* Understand the difference between binding and assignment.
+* Closures capture their outer variables by references, not by value.
+* Use immediately invokes function expressions (IIFEs) to create local scopes.
+* Be away of the cases where wrapping a block in an IIFE can change its behavior.
+
+# Beware of Unportable Scoping of Named Function Expressions
+* Use names function expressions to improve stack traces in 'Error' objects and debuggers.
+* Beware of pollution of function expression scope with 'Object.prototype' in ES3 and buggy JavaScript environments.
+* Beware of hoisting and duplicate allocation of named function expressions in buggy JavaScript environments.
+* Consider avoiding named function expressions or removing them before shipping.
+* If you are shipping in properly implemented ES5 environments, you've got nothing to worry about.
