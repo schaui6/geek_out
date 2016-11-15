@@ -5,3 +5,4 @@
 ## [Sorting Algorithms](sorting-algorithms/ "Sorting Algorithms")
 ## [Technical Interview Questions](interview-questions/interview-questions.md "Interview Questions")
 ## [JavaScript Notes](js-notes/javascript-notes.md "JavaScript Notes")
+## [Ruby Notes](rb-notes/ruby-notes.md "Ruby Notes")
