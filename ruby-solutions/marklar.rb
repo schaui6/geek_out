@@ -10,7 +10,7 @@ def marklar(str)
     if word.length > 4
       if word === word.capitalize
         word = 'Marklar'
-      elsif word.scan(/(\W)/)
+      elsif /(\W)/ === word
         special_char = word[-1]
         word = "marklar#{special_char}"
       else
