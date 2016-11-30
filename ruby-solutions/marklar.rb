@@ -4,26 +4,26 @@
 def marklar(str)
   words = str.split(' ')
 
-  result = []
+  output = []
 
   words.each do |word|
     if word.length > 4
       if word === word.capitalize
         word = 'Marklar'
-        result.push(word)
+        output.push(word)
       elsif /(\W)/ === word
         special_char = word[-1]
         word = "marklar#{special_char}"
-        result.push(word)
+        output.push(word)
       else
         word = 'marklar'
-        result.push(word)
+        output.push(word)
       end
     else
-      result.push(word)
+      output.push(word)
     end
   end
-    return result.join(' ')
+    return output.join(' ')
 end
 
 marklar("The quick brown fox")
