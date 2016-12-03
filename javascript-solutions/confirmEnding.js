@@ -16,6 +16,11 @@ function confirmEnding(str, target) {
   }
 }
 
+// Alternate Solution
+// function confirmEnding(str, target) {
+//   return str.substr(-target.length) === target;
+// }
+
 confirmEnding("Bastian", "n");
 confirmEnding("Connor", "n");
 confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification");
