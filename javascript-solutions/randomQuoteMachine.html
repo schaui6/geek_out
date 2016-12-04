@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <title></title>
+</head>
+<body>
+
+  <a href="">Quote</a>
+<div id="quote">
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+   var quotes = [
+      {"author" : "Arnold", "quote" : "I'll be back"},  
+      {"author" : "Carver", "quote" : "I love peanut butter"},  
+      {"author" : "Lion King", "quote" : "In the jungle..."},  
+      {"author" : "Dr. King", "quote" : "I have a dream"},  
+      {"author" : "Lincoln", "quote" : "Four scores"},  
+      {"author" : "Ali", "quote" : "Sting like a bee..."},  
+      {"author" : "Ben", "quote" : "$100"}  
+    ];
+
+    $('a').on('click',function(e){
+      e.preventDefault();
+      var i = Math.floor(Math.random()*(quotes.length + 1) );
+      var author = quotes[i]['author'];
+      var quote = quotes[i]['quote'];
+      $('#quote').html("'" + quote + "'" + "<strong>" + " -" + author + "</strong>");
+        
+      });
+    });
+ 
+</script>
+
+</body>
+</html>
