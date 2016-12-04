@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <title></title>
+</head>
+<body>
+
+<a href="#" id='fahrenheit'>Fahrenheit</a> | <a href="#" id="celsius">Celsius</a>
+
+<div></div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    if (navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(function(position){
+      var lat = position.coords.latitude;
+      var long = position.coords.longitude;
+      var key = '274599966ac8137dbb4ab9dd580ee0f5';
+      
+      $('#celsius').on('click', function(e){
+        e.preventDefault();
+        $.ajax({
+          url: "http://api.openweathermap.org/data/2.5/weather?appid=" + key + "&lat=" + lat + "&lon=" + long + "&units=metric" ,
+           context: document.body
+        })
+        .done(function(data){
+          var loc = data.name;
+          var desc = data.weather[0].main;
+          var icon = data.weather[0].icon;
+          var temp = data.main.temp;
+          $('div').html("<strong>Location:</strong> " + loc + "<br>" + "<strong>Description:</strong> " + desc + "<br>" + "<img src='http://openweathermap.org/img/w/" + icon + ".png'>" + "<br>" + temp + " °");
+        })
+        .fail(function(){
+          
+          console.log("failed ajax call");
+        });
+      });
+      console.log(lat + " " + long);
+
+      $('#fahrenheit').on('click', function(e){
+        e.preventDefault();
+      $.ajax({
+        url: "http://api.openweathermap.org/data/2.5/weather?appid=" + key + "&lat=" + lat + "&lon=" + long + "&units=imperial",
+           context: document.body
+        })
+        .done(function(data){
+          var loc = data.name;
+          var desc = data.weather[0].main;
+          var icon = data.weather[0].icon;
+          var temp = data.main.temp;
+          $('div').html("<strong>Location:</strong> " + loc + "<br>" + "<strong>Description:</strong> " + desc + "<br>" + "<img src='http://openweathermap.org/img/w/" + icon + ".png'>" + "<br>" + temp + " °");
+        })
+        .fail(function(){
+          
+          console.log("failed ajax call");
+        });
+      });
+
+
+      });
+    }
+  });
+
+ 
+</script>
+
+</body>
+</html>
