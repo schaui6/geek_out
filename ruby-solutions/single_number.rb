@@ -4,10 +4,12 @@ def single_number(nums)
  dict = {}
 
  nums.map do |num|
-   dict[num] = dict[num] ? dict[num] += 1 
+   dict[num] = dict[num] ? dict[num] += 1 : 1
  end
- p dict
-
+ 
+ dict.keys.map do |key|
+    return key if dict[key] === 1
+ end
 end
 
-single_number([1,1,2,3,3,4,4])
+p single_number([1,1,2,3,3,4,4])
