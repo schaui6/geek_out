@@ -38,10 +38,10 @@
 
 def length_of_longest_substring(s)
 
-  return 0 if s == nil || s.length == 0 
+  greedy_count = 0 if s == nil || s.length == 0 
   
   ans = {}
-  count = 0
+  count = ans.count
   greedy_count = 0
 
   i = 0
@@ -49,20 +49,37 @@ def length_of_longest_substring(s)
 
   while i < j
     if !ans[s[i]]
+      # count += 1
       ans[s[i]] = 1
       p ans
-      count += 1
+      # p ans.count
+      greedy_count = ans.count if ans.count > greedy_count
+      # p greedy_count
+    # else
+      # ans[s[i]] += 1
+      # count+=1
+      # greedy_count = count if count > greedy_count
+    #   # p ans
+      # count = 0
+    #   # p ans
     else
-      ans[s[i]] += 1
-      p ans
+      # p ans
+      ans = {}
+      ans = Hash[s[i-1],1]
+      # # greedy_count = ans.count if ans.count > greedy_count
+      # p ans
     end
-      i+=1
+    i+=1
   end
-  greedy_count = count if count > greedy_count
+  # p ans
+  # greedy_count = count if count > greedy_count
   p greedy_count
+  # p ans.count
 end
 
 # length_of_longest_substring("")
-length_of_longest_substring("abcabccc")
+# length_of_longest_substring("abcabccc")
 # length_of_longest_substring("bbbbb")
 length_of_longest_substring("pwwkew")
+# length_of_longest_substring("c")
+length_of_longest_substring("dvdf")
