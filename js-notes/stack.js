@@ -42,7 +42,7 @@ Stack.prototype.until = function(val){
 };
 
 
-var myWeeklyMenu = new Stack();
+var myWeeklyMenu = new Stack(3);
 
 myWeeklyMenu.push("RedBeans");
 myWeeklyMenu.push("BlueBeans");
