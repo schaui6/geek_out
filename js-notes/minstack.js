@@ -1,6 +1,6 @@
 var Stack = function(capacity){
   this._capacity = capacity || Infinity;
-  this._storage = "";
+  this._storage = {};
   this._count = 0;
 };
 

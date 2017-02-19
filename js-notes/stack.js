@@ -1,6 +1,6 @@
 var Stack = function(capacity){
   this._capacity = capacity || Infinity;
-  this._storage = "";
+  this._storage = {};
   this._count = 0;
 };
 
@@ -33,12 +33,19 @@ Stack.prototype.peek = function(){
   return this._storage[this._count-1];
 };
 
-Stack.prototype.contains = function(val){
+Stack.prototype.contains = function(value){
+  for(var i = 0; i < this._count; i++){
+    if(this._storage[i] === value) return true;
+  }
+  return false;
 
 };
 
-Stack.prototype.until = function(val){
-
+Stack.prototype.until = function(value){
+  for(var i = 0; i < this._count; i ++){
+    if(this._storage[i] === value) return i+1;
+  }
+  return null;
 };
 
 
