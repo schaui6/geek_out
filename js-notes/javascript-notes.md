@@ -174,4 +174,8 @@ Item 21: Use apply to Call Functions with Different Numbers of Arguments
 * A class is a design pattern consisting of a constructor function and an associated prototype.
 
 Item 31: Prefer Object.getPrototypeOf to __proto__
-* 
+* Prefer the standards-compliant Object.getPrototypeOf standart __proto__ property.
+* Implement Object.getPrototypeOf in non-ES5 environments tha support __proto__.
+
+Item 32: Never Modify __proto__
+*
