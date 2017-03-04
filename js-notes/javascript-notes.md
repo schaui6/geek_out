@@ -177,5 +177,37 @@ Item 31: Prefer Object.getPrototypeOf to __proto__
 * Prefer the standards-compliant Object.getPrototypeOf standart __proto__ property.
 * Implement Object.getPrototypeOf in non-ES5 environments tha support __proto__.
 
-Item 32: Never Modify __proto__
-*
+# Item 32: Never Modify __proto__
+* Never modify an object's __proto__ property.
+* Use Object.create to provide a custom prototype for new objects.
+
+# Item 33: Make Your Constructors new-Agnostic
+* Make a constructor agnostic to its caller's syntax by reinvoking itself with new or with Object.create.
+*Document clearly when a function expects to be called with new.
+
+# Item 34: Store Methods on Prototypes
+* Storing methods of instance objects creates multiple copies of functions, once per instance object.
+* Prefer storing methods on prototypes over storing them on instance objects.
+
+# Item 35: User Closures to Store Private Data
+* Closure variables are private, accessible only to local references.
+* Use local variables as private data to enforce information hiding within methods.
+
+# Item 36: Store Instance State Only on Instance Objects
+* Mutable data can be problematic when shared, and prototypes are shared between all their instances.
+* Store mutable per-instance state on instance objects. 
+
+# Item 37: Recognize the Implicit Binding of this
+* The scope of this is always determined by its nearest enclosed function.
+* Use a local variable, usually called self, me, or that, to make a this-binding available to inner functions.
+
+# Item 38: Call Superclass Constructors from Subclass Constructors
+* Call the superclass constructor explicitly from subclass constructors, passing this as the explicit receiver.
+* Use Object.create to construct the subclass prototype object to avoid calling the superclass constructor.
+
+# Item 49: Never Reuse Superclass Property Names
+* Be aware of all property names used by your superclasses.
+* Never reuse a superclass property name in a subclass.
+
+# Item 40: Avoid Inheriting from Standard Classes
+* 
