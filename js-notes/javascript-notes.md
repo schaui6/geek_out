@@ -252,4 +252,23 @@ Item 31: Prefer Object.getPrototypeOf to __proto__
 * If you do add properties to Object.prototype, use ES5's Object.defineProperty to define them as nonenumerable properties.
 
 # Item 48: Avoid Modifying an Object During Enumeration
-* 
+* Make sure not to modify an object while enumerating its properties with a for...in loop.
+* Use of while loop or classic for loop instead of a for...in loop when iterating over an object whose contents might change during the loop.
+* For predictable enumeration over a changing data structure, consider using a sequential data structure such as an array instead of a dictionary object.
+
+# Item 49: Prefer for Loops to for...in Loops for Array Iteration
+* Always use a for loop rather than a for...in loop for iterating over the indexed properties of an array.
+* Consider storing the length property of an array in a local variable before a loop to avoid recomputing the property lookup.
+
+# Item 50: Prefer Iteration Methods to Loops
+* Use iteration methods such as Array.prototype.forEach and Array.prototype.map in place of for loops to make code more readable and avoid duplicating loop control logic.
+* Use custom iteration functions to abstract common loop patterns that are not provided by the standard library.
+* Traditional loops can still be appropriate in cases where early exit is necessary; alternatively, the some and every methods can be used for early exit.
+
+# Item 51: Reuse Generic Array Methods on Array-Like Objects
+* Reuse generic Array methods on array-like objects by extracting method objects and using their call method.
+* Any object can be used with generic Array methods if it has indexed properties and an appropriate length property.
+
+#Prefer Array Literals to the Array Constructor
+* The Array constructor behaves differently if its first argument is a number.
+* Use array literals instead of the Array constructor.
