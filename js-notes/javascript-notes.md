@@ -319,4 +319,37 @@ Support method chaining by designing stateless methods that produce new objects.
 * Never use blocking I/O in an application's event queue.
 
 # Item 62: Use Nested or Named Callbacks for Asynchronous Sequencing
-* 
+* Use nested or named callbacks to perform several asynchronous operations in sequence.
+* Try to strike a balance between excessive nesting of callbacks and awkward naming of non-nested callbacks.
+* Avoid sequencing operations that can be performed concurrently.
+
+* Item 63: Be Aware of Dropped Errors
+* Avoid copying and pasting error-handling code by writing shared error-handling functions.
+* Make sure to handle all error conditions explicitly to avoid dropped errors.
+
+# Item 64: Use Recursion for Asynchronous Loops
+* Loops cannot be asynchronous.
+* Use recursive functions to perform iterations in separate turns of the event loop.
+* Recursion performed in separate turns of the event loop does not overflow the call stack.
+
+# Item 65: Don't Block the Event Queue on Computation
+* Avoid expensive algorithms in the main event queue.
+* On platforms that support it, the Worker API can be used for running long computations in a separate event queue.
+* When the Worker API is not available or is too costly, consider breaking up computations across multiple turns of the event loop.
+
+# Item 66: Use a Counter to Perform Concurrent Operations
+* Events in a JavaScript application occur nondeterministically, that is, in unpredictable order.
+* Use a counter to avoid data races in concurrent operations.
+
+# Item 67: Never Call Asynchronous Callbacks Synchronously
+* Never call an asynchronous callback synchronously, even if the data is immediately available.
+* Calling an asynchronous callback synchronously disrupts the expected sequence of operations and can lead to unexpected interleaving of code.
+* Calling an asynchronous callback synchronously can lead to stack overflows or mishandled exceptions.
+* Use an asynchronous API such as setTimeout to schedule an asynchronous callback to run in another turn.
+
+# Item 68: Use Promises for Cleaner Synchronous Logic
+* Promises represent eventual values. that is, concurrent computations that eventually produce a result.
+* Use promises to compose different concurrent operations.
+* Use promise APIs to avoid data races.
+* Use select (also known as choose) for situations where an intentional race condition is required.
+
