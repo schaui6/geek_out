@@ -269,6 +269,54 @@ Item 31: Prefer Object.getPrototypeOf to __proto__
 * Reuse generic Array methods on array-like objects by extracting method objects and using their call method.
 * Any object can be used with generic Array methods if it has indexed properties and an appropriate length property.
 
-#Prefer Array Literals to the Array Constructor
+# Item 52: Prefer Array Literals to the Array Constructor
 * The Array constructor behaves differently if its first argument is a number.
 * Use array literals instead of the Array constructor.
+
+# Item 53: Maintain Consistent Conventions
+* Use consistent conventions for variable names and function signatures.
+* Don't deviate from conventions your users are likely to encounter in other parts of their development platform.
+
+$ Item 54: Treat undefined As "No Value"
+* Avoid using undefined to represent anything other than the absence of a specific value.
+* Use descriptive string values or objects with named boolean properties, rather than undefined or null, to represent application-specific flags.
+* Test for undefined instead of checking arguments.length to provide parameter default values.
+
+# Item 55: Accept Options Objects for Keyword Arguments
+* Use options objects to make APIs more readable and memorable.
+* The arguments proved by an options object should all be treated as optional.
+* Use an extend utility function to abstract out the logic of extracting values from options objects.
+
+# Item 56: Avoid Unnecessary State
+* Prefer stateless APIs where possible.
+* When providing stateful APIs, document the relevant state that each operation depends on.
+
+# Item 57: Use Structural Typing for Flexible Interfaces
+* Use structural typing(also known as duck typing) for flexible object interfaces.
+* Avoid inheritance when structural interfaces are more flexible and lightweight.
+* Use mock objects, that is, alternative implementations of interfaces that provide repeatable behavior, for unit testing.
+
+# Item 58: Distinguish between Array and Array-Like
+* Never overload structural types with other overlapping types.
+* When overloading a structural type with other types, test for other types first.
+* Accept true arrays instead of array-like objects when overloading with other object types.
+* Document whether your API accepts true arrays or array-like values.
+* Use ES5's Array.isArray to test for true arrays.
+
+# Item 59: Avoid Excessive Coercion
+* Avoid mixing coercions with overloading.
+* Consider defensively guarding against unexpected inputs.
+
+# Item 60: Support Method Chaining
+* Use method chaining to combine stateless operations.
+Support method chaining by designing stateless methods that produce new objects.
+* Support method chaining in stateful methods by returning this.
+
+<!-- Chapter 7 -->
+# Item 61: Don't Block the Event Queue on I/O
+* Asynchronous APIs take callbacks to defer processing of expensive operations and avoid blocking the main application.
+* JavaScript accepts events concurrently but processes event handlers sequentially using an event queue.
+* Never use blocking I/O in an application's event queue.
+
+# Item 62: Use Nested or Named Callbacks for Asynchronous Sequencing
+* 
