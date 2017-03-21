@@ -10,7 +10,7 @@ a[0](); //3
 a[1](); //3
 a[2](); //3
 
-var a = {};
+var a = {}; 
 for(var i = 0; i<3; i++) {
   (function(j){
     a[j] = function(){
