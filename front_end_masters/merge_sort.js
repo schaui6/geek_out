@@ -30,11 +30,13 @@ const stitch = (left, right) => {
     }    
   }
   //if one array has any remainders add it to the end of the results array
-  while(left.length){
-    results.push(left.shift());
-  }
-  while(right.length) {
-    results.push(right.shift());
-  }
-  return results
+//   while(left.length){
+//     results.push(left.shift());
+//   }
+//   while(right.length) {
+//     results.push(right.shift());
+//   }
+//   return results
+// or you can just use the code below:
+return results.concat(left, right);
 };
