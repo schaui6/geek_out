@@ -15,3 +15,13 @@ const bubbleSort = (nums) => {
   } while(swapped);
   snapshot(nums);
 }
+
+
+// 2 pointers
+// 1 outter loop and 1 inner loop
+// loop through if first pointer is true, mark false, and if it is swapped mark true
+// if first pointer is > second pointer, swapp, then mark swap = true
+// [7,9,3,8]
+// [7,3,9,8]
+// [7,3,8,9]
+// [3,7,8,9]
