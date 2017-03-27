@@ -1,4 +1,4 @@
-// basic recursion
+// basic recursion (n log n)
 let wr = (msg= '----------') => document.write('<br>${msg}');
 
 function basicRecursion(max, current) {
